@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-#include "board.hpp"
+#include "Sample_Rubik2D/board.hpp"
 
 using std::vector;
 using std::string;

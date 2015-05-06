@@ -1,6 +1,6 @@
 #include <vector>
 
-#include "board.hpp"
+#include "Sample_Rubik2D/board.hpp"
 
 using std::vector;
 
@@ -13,27 +13,27 @@ private:
     vector<Node*> children;
 
     bool developped;
-    
+
 public:
     Node(Node* p, Action a)
-	{
-	    parent = p;
-	    //TODO : compute state from p.state && action
-	}
-    
+    {
+        parent = p;
+        //TODO : compute state from p.state && action
+    }
+
     ~Node()
-	{
-	    if(state != NULL)
-		delete state;
-	    
-	    if(developped)
-	    {
-		for(auto it = children.begin(); it != children.end(); it++)
-		{
-		    delete *it;
-		}
-	    }
-	}
+    {
+        if(state != NULL)
+            delete state;
+
+        if(developped)
+        {
+            for(auto it = children.begin(); it != children.end(); it++)
+            {
+                delete *it;
+            }
+        }
+    }
 
     void develop();
 };
