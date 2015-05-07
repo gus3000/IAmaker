@@ -1,16 +1,18 @@
 #ifndef ACTION_HPP
 #define ACTION_HPP
 
-#include <state.hpp>
+#include <vector>
 
+#include "state.hpp"
+
+using std::vector;
 
 class Action
 {
 public:
-    Action();
-    virtual ~Action() = 0;
 
     virtual State *operator()(State *s) = 0;
+    virtual vector<Action *> allActions(State *s) = 0;
 };
 
 #endif // ACTION_HPP

@@ -1,3 +1,4 @@
+#include "actionrubik2d.hpp"
 #include "board.hpp"
 
 #include <iostream>
@@ -7,5 +8,5 @@
 
 int main(int argc, char* argv[])
 {
-
+    ActionRubik2D action;
 }
