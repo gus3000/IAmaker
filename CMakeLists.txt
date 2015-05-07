@@ -10,4 +10,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 INCLUDE_DIRECTORIES(".")
 
 add_subdirectory(Motor)
+add_subdirectory(Samples)
 #add_subdirectory(Sample_Rubik2D)

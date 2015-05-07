@@ -1,12 +1,6 @@
 #include "node.hpp"
 
 template <typename StateType>
-Node<StateType>::Node(StateType s)
-{
-
-}
-
-template <typename StateType>
 Node<StateType>::~Node()
 {
     //we delete every child
@@ -15,5 +9,11 @@ Node<StateType>::~Node()
         delete *it;
     }
 
-    //note that we did not delete the parent node, so if you want to destroy the whole tree you want to call delete on root.
+    //note that we did not delete the parent node, so if want to destroy the whole tree you must call delete on root.
+}
+
+template <typename StateType>
+void Node<StateType>::develop()
+{
+    state.getChildren();
 }

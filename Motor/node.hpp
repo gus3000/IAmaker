@@ -1,10 +1,15 @@
 #ifndef NODE_HPP
 #define NODE_HPP
 
+#include "action.hpp"
+
 #include <vector>
 
 using std::vector;
 
+/**
+ * the templated Statetype must extend State
+ */
 template <typename StateType>
 class Node
 {
@@ -16,8 +21,11 @@ private:
     vector<Node *> children;
 
 public:
-    Node(StateType s);
+    Node(Node* p, Action *a) : parent(p), depth(p->depth + 1), state(a(p->state)) {}
     ~Node();
+
+    //computes children
+    void develop();
 };
 
 #endif // NODE_HPP
